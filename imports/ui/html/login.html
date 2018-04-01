@@ -1,6 +1,7 @@
 <template name="login">
     {{#if currentUser}}
      <h3>you are login yet!</h3>
+     <a href="/sidebar">Home</a>
     {{else}}
     <form class="ui form">
         <h3>Registration Form</h3>
@@ -12,7 +13,7 @@
             <label>password</label>
             <input type="password" name="password" placeholder="Password">
         </div>
-        <button class="ui button" type="submit">Register</button>
+        <button class="ui button" type="submit">Log in</button>
         <p>No Accaunt? <a href="/signup">Create Accaunt</a></p>
     </form>
     {{/if}}

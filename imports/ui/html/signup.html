@@ -1,0 +1,18 @@
+<template name="signup">
+    {{ #if currentUser }}
+    
+    {{else}}
+    <form class="ui form form-signup" id="register-form">
+        <h3>Registration Form</h3>
+        <div class="field">
+            <label>User Name</label>
+            <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="field">
+            <label>password</label>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <button class="ui button" type="submit">Sign up</button>
+    </form>
+    {{/if}}
+</template>
