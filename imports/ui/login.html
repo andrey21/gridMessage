@@ -1,0 +1,19 @@
+<template name="login">
+    {{#if currentUser}}
+     <h3>you are login yet!</h3>
+    {{else}}
+    <form class="ui form">
+        <h3>Registration Form</h3>
+        <div class="field">
+            <label>First Name</label>
+            <input type="text" name="first-name" placeholder="First Name">
+        </div>
+        <div class="field">
+            <label>password</label>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <button class="ui button" type="submit">Register</button>
+        <p>No Accaunt? <a href="/signup">Create Accaunt</a></p>
+    </form>
+    {{/if}}
+</template>
