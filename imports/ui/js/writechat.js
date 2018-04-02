@@ -1,0 +1,1 @@
+import '../html/writechat.html';

@@ -1,10 +1,10 @@
 <template name="navbar">
     <div class="ui secondary  menu">
         {{ #if currentUser}}
-        <a class="item active">
+        <a class="item active" href="/writechat">
             Write msg
         </a>
-        <a class="item">
+        <a class="item" href="/recentchat">
             Recent msg
         </a>
         {{ else }}
@@ -16,7 +16,7 @@
                 <div class="ui top left pointing dropdown button">
                     <i class="user icon user_icon"></i>
                     <div class="menu">
-                        <div class="item"><i class="edit icon"></i>Edit User</div>
+                        <div class="item"><i class="edit icon"></i><a href="/privet_office">Office</a></div>
                         {{ #if currentUser }}
                         <div class="item logout"><i class="delete icon"></i>Log out</div>
                         {{ else }}

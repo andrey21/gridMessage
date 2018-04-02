@@ -1,35 +1,33 @@
-import '../html/signup.html';
+import '../ui/html/login.html';
 
-Template.signup.rendered = function() {
+Tracker.autorun(function(){
+    if(Meteor.userId()){
+        Router.go("/sidebar");
+    }
+});
+
+Template.login.rendered = function(){
 
 };
 
-Template.signup.events({
-    "submit .form-signup": function(event){
+Template.login.events({
+    "submit .login-form": function(event){
         var username = trimInput(event.target.username.value);
         var password = trimInput(event.target.password.value);
 
         if(isNotEmpty(username) && isNotEmpty(password) && isValidPassword(password)){
-            Accounts.createUser({
-                username: username,
-                password: password,
-                profile: {
-
+            Meteor.loginWithPassword(username, password, function(err){
+                if(err){
+                    Bert.alert(err.reason, "danger", "growl-top-right");
+                    return false;
+                } else{
+                    Router.go("/sidebar");
+                    Bert.alert("You are logged in!", "success", "growl-top-right");
                 }
-            },  function(err){
-                    if(err){
-                        Bert.alert(err.reason, "danger", "growl-top-right");
-                    } else {
-                        Bert.alert("Accaunt Created!", "success", "growl-top-right");
-                        Router.go("/sidebar");
-                    }
-                });
+            });
         }
-
         return false;
     }
-
-
 });
 
 var trimInput = function(val){

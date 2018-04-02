@@ -1,30 +1,31 @@
 <template name="sidebar">
         <div class="ui bottom attached segment pushable">
                 <div class="ui visible inverted left vertical thin sidebar menu">
+                  {{ #each onlusers }}
                   <a class="item">
-                    <i class="home icon"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                    Главная
-                  </font></font></a>
+                    <i class="home icon"></i>
+                    {{username}}
+                  </a>
                   <a class="item">
-                    <i class="block layout icon"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                    темы
-                  </font></font></a>
+                    <i class="block layout icon"></i>
+                    {{username}}
+                  </a>
                   <a class="item">
-                    <i class="smile icon"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    <i class="smile icon"></i>
                     друзья
-                  </font></font></a>
+                  </a>
                   <a class="item">
-                    <i class="calendar icon"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    <i class="calendar icon"></i>
                     история
-                  </font></font></a>
+                  </a>
+                  {{/each}}
                 </div>
                 <div class="pusher">
                   <div class="ui basic segment">
-                    <h3 class="ui header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Содержание приложения</font></font></h3>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <h3>Содержание приложения</h3>
+                    {{> privet_office}}
+                    {{> writechat}}
+                    {{> recentchat}}
                   </div>
                 </div>
               </div>

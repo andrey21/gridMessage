@@ -1,27 +1,35 @@
-import '../html/login.html';
+import '../ui/html/signup.html';
 
-Template.login.rendered = function(){
+Template.signup.rendered = function() {
 
 };
 
-Template.login.events({
-    "submit .login-form": function(event){
+Template.signup.events({
+    "submit .form-signup": function(event){
         var username = trimInput(event.target.username.value);
         var password = trimInput(event.target.password.value);
 
         if(isNotEmpty(username) && isNotEmpty(password) && isValidPassword(password)){
-            Meteor.loginWithPassword(username, password, function(err){
-                if(err){
-                    Bert.alert(err.reason, "danger", "growl-top-right");
-                    return false;
-                } else{
-                    Router.go("/sidebar");
-                    Bert.alert("You are logged in!", "success", "growl-top-right");
+            Accounts.createUser({
+                username: username,
+                password: password,
+                profile: {
+
                 }
-            });
+            },  function(err){
+                    if(err){
+                        Bert.alert(err.reason, "danger", "growl-top-right");
+                    } else {
+                        Bert.alert("Accaunt Created!", "success", "growl-top-right");
+                        Router.go("/sidebar");
+                    }
+                });
         }
+
         return false;
     }
+
+
 });
 
 var trimInput = function(val){

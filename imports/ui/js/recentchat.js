@@ -1,0 +1,1 @@
+import '../html/recentchat.html';
