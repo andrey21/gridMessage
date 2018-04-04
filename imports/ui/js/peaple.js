@@ -1,9 +1,9 @@
-Template.sidebar.onCreated( () => {
+Template.peaple.onCreated( () => {
     let template = Template.instance();
-    template.subscribe( 'sidebar' );
+    template.subscribe( 'peaple' );
   });
   
-  Template.sidebar.helpers({
+  Template.peaple.helpers({
     currentChannel( name ) {
       let current = FlowRouter.getParam( 'channel' );
       if ( current ) {
@@ -20,11 +20,6 @@ Template.sidebar.onCreated( () => {
       let users = Meteor.users.find( { _id: { $not: Meteor.userId() } } );
       if ( users ) {
         return users;
-      }
-    },
-    fullName( name ) {
-      if ( name ) {
-        return `${ name.first } ${ name.last }`;
       }
     }
   });
