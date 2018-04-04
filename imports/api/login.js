@@ -1,10 +1,10 @@
 import '../ui/html/login.html';
 
-Tracker.autorun(function(){
-    if(Meteor.userId()){
-        Router.go("/sidebar");
-    }
-});
+// Tracker.autorun(function(){
+//     if(Meteor.userId()){
+//         Router.go("/");
+//     }
+// });
 
 Template.login.rendered = function(){
 
@@ -21,7 +21,7 @@ Template.login.events({
                     Bert.alert(err.reason, "danger", "growl-top-right");
                     return false;
                 } else{
-                    Router.go("/sidebar");
+                    Router.go("/");
                     Bert.alert("You are logged in!", "success", "growl-top-right");
                 }
             });

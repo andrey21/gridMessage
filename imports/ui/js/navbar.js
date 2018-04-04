@@ -10,6 +10,12 @@ Template.navbar.events({
                 Bert.alert("You are now logged out", "success", "growl-top-right");
             }
         });
+    },
+    "click .office": function(event){
+        Router.go("/privet_office");
+    },
+    "click .probMess": function(event){
+        Router.go("/messages/general");
     }
 });
 
@@ -20,4 +26,3 @@ Template.navbar.events({
         ;
     }
 });
-

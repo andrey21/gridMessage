@@ -1,3 +1,4 @@
+import { Accounts } from 'meteor/accounts-base';
 import '../ui/html/signup.html';
 
 Template.signup.rendered = function() {
@@ -10,6 +11,7 @@ Template.signup.events({
         var password = trimInput(event.target.password.value);
 
         if(isNotEmpty(username) && isNotEmpty(password) && isValidPassword(password)){
+            
             Accounts.createUser({
                 username: username,
                 password: password,

@@ -1,32 +1,23 @@
 <template name="sidebar">
-        <div class="ui bottom attached segment pushable">
-                <div class="ui visible inverted left vertical thin sidebar menu">
-                  {{ #each onlusers }}
-                  <a class="item">
-                    <i class="home icon"></i>
-                    {{username}}
-                  </a>
-                  <a class="item">
-                    <i class="block layout icon"></i>
-                    {{username}}
-                  </a>
-                  <a class="item">
-                    <i class="smile icon"></i>
-                    друзья
-                  </a>
-                  <a class="item">
-                    <i class="calendar icon"></i>
-                    история
-                  </a>
-                  {{/each}}
-                </div>
-                <div class="pusher">
-                  <div class="ui basic segment">
-                    <h3>Содержание приложения</h3>
-                    {{> privet_office}}
-                    {{> writechat}}
-                    {{> recentchat}}
-                  </div>
-                </div>
-              </div>
+  <div class="navbar">
+      {{> navbar}}
+  </div>
+  <div class="ui bottom attached segment pushable">
+    <div class="ui visible inverted left vertical thin sidebar menu">
+      <a class="item">
+        <i class="home icon"></i>
+        
+      </a>
+    </div>
+    <div class="pusher">
+      <div class="ui basic segment">
+        <div id="Privat">
+          {{> yield "privat"}}
+        </div>
+        <div class="prob">
+          {{> yield "prob"}}
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

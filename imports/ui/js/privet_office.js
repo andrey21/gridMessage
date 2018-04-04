@@ -1,5 +1,6 @@
 import '../html/privet_office.html';
 
+
 Template.privet_office.helpers({
     username: function() {
         if(!Meteor.user()){
